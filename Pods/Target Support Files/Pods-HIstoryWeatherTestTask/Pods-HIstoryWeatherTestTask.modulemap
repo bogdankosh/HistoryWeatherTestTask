@@ -1,0 +1,6 @@
+framework module Pods_HIstoryWeatherTestTask {
+  umbrella header "Pods-HIstoryWeatherTestTask-umbrella.h"
+
+  export *
+  module * { export * }
+}
