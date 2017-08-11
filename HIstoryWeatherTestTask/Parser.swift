@@ -46,7 +46,9 @@ class Parser {
             let stringArrayLine = string.components(separatedBy: .whitespaces)
             let filtered = stringArrayLine.filter({!$0.isEmpty})
             
-            arrayStrOfStr.append(filtered)
+            if !filtered.isEmpty {
+                arrayStrOfStr.append(filtered)
+            }
         }
         
         var data = [WeatherModel]()

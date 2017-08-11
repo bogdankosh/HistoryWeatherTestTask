@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		430200AA1F38488600C0991A /* GraphLIstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430200A91F38488600C0991A /* GraphLIstTableViewCell.swift */; };
 		4305E2FE1F366AE6001E00C8 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4305E2FD1F366AE6001E00C8 /* ChartViewController.swift */; };
+		430B89DA1F39EC0E00F5EE2B /* FrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B89D91F39EC0E00F5EE2B /* FrameViewController.swift */; };
+		430B89DC1F39FDC400F5EE2B /* FrameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B89DB1F39FDC400F5EE2B /* FrameTableViewCell.swift */; };
 		432486261F34E5EA004068F5 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432486251F34E5EA004068F5 /* WeatherModel.swift */; };
 		432564FD1F33B4A1000C1402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432564FC1F33B4A1000C1402 /* AppDelegate.swift */; };
 		432564FF1F33B4A1000C1402 /* HWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432564FE1F33B4A1000C1402 /* HWViewController.swift */; };
@@ -43,6 +45,8 @@
 		1AD08A80E04BBCE3BACD34E7 /* Pods_HIstoryWeatherTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HIstoryWeatherTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		430200A91F38488600C0991A /* GraphLIstTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphLIstTableViewCell.swift; sourceTree = "<group>"; };
 		4305E2FD1F366AE6001E00C8 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		430B89D91F39EC0E00F5EE2B /* FrameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameViewController.swift; sourceTree = "<group>"; };
+		430B89DB1F39FDC400F5EE2B /* FrameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameTableViewCell.swift; sourceTree = "<group>"; };
 		432486251F34E5EA004068F5 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		432564F91F33B4A1000C1402 /* HIstoryWeatherTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIstoryWeatherTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		432564FC1F33B4A1000C1402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				432564FE1F33B4A1000C1402 /* HWViewController.swift */,
 				4305E2FD1F366AE6001E00C8 /* ChartViewController.swift */,
 				43DE51261F379C29002AC71B /* ResourcesTableViewController.swift */,
+				430B89D91F39EC0E00F5EE2B /* FrameViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				432565001F33B4A1000C1402 /* Main.storyboard */,
 				437B187B1F3606F300A30789 /* HWTableViewCell.swift */,
 				430200A91F38488600C0991A /* GraphLIstTableViewCell.swift */,
+				430B89DB1F39FDC400F5EE2B /* FrameTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -323,9 +329,11 @@
 				43DE51271F379C29002AC71B /* ResourcesTableViewController.swift in Sources */,
 				432564FD1F33B4A1000C1402 /* AppDelegate.swift in Sources */,
 				430200AA1F38488600C0991A /* GraphLIstTableViewCell.swift in Sources */,
+				430B89DA1F39EC0E00F5EE2B /* FrameViewController.swift in Sources */,
 				4305E2FE1F366AE6001E00C8 /* ChartViewController.swift in Sources */,
 				432486261F34E5EA004068F5 /* WeatherModel.swift in Sources */,
 				437B187A1F36063B00A30789 /* Constants.swift in Sources */,
+				430B89DC1F39FDC400F5EE2B /* FrameTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

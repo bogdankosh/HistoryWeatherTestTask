@@ -58,6 +58,7 @@ class HWViewController: UIViewController {
         dataSource.load(url: url)
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? ChartViewController {
             destinationVC.store = store
@@ -72,23 +73,26 @@ class HWViewController: UIViewController {
 
 extension HWViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: GraphLIstTableViewCell.identifier, for: indexPath) as? GraphLIstTableViewCell {
-            
-            cell.graphName.text = availableGraphViews[indexPath.row][0]
+        
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: GraphLIstTableViewCell.identifier, for: indexPath) as! GraphLIstTableViewCell
+            cell.graphName.text =                   availableGraphViews[indexPath.row][0]
+            cell.graphImage.image = UIImage(named:  availableGraphViews[indexPath.row][1])
             cell.dataPointsLabel.text = String(store.count)
-            cell.graphImage.image = UIImage(named: availableGraphViews[indexPath.row][1])
-        
-        
-        
-        return cell
-
-        } else {
+            return cell
+            
+            
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: FrameTableViewCell.identifier, for: indexPath) as! FrameTableViewCell
+            return cell
+        default:
             return UITableViewCell()
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return availableGraphViews.count
+        return 2        // availableGraphViews.count
     }
 }
 
