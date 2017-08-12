@@ -73,8 +73,14 @@ class Parser {
                 
                 // switch for every item in array that we need.
                 switch itemIndex {
-                case 0: yearToInit = Int(item)!
-                case 1: monthToInit = Int(item)!
+                case 0:
+                    if let number = Int(item) {
+                        yearToInit = number
+                    } else { yearToInit = 0 }
+                case 1:
+                    if let number = Int(item) {
+                        monthToInit = number
+                    } else { monthToInit = 0 }
                 case 2: tmaxToInit = checkValueAndEstimation(ofDouble: item)
                 case 3: tminToInit = checkValueAndEstimation(ofDouble: item)
                 case 4: let temp = checkValueAndEstimation(ofDouble: item)

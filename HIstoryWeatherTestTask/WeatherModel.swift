@@ -20,7 +20,7 @@ class WeatherModel {
     
     init?(year: Int, month: Int, tmax: (Double, Bool)?, tmin: (Double, Bool)?, af: (Int, Bool)?, rain: (Double, Bool)?, sun: (Double, Bool)?) {
         // Check if data is valid
-        if month == 0 {
+        if month == 0 || year == 0 {
             return nil
         }
         

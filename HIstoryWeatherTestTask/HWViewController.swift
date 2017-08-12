@@ -53,7 +53,7 @@ class HWViewController: UIViewController {
     }
     
     func doRequest() {
-        title = "Loading..."
+        navigationItem.prompt = "Loading..."
         let url = URL(string: destination.fullPath)!
         dataSource.load(url: url)
     }
@@ -103,12 +103,18 @@ extension HWViewController: ParserDelegate {
         self.store = storeVar
         DispatchQueue.main.async {
             self.title = self.destination.description.capitalized
+            self.navigationItem.prompt = nil
         }
     }
     
     func didFailUpdateWith(error: Error?) {
-        title = "Network error"
-        
+        DispatchQueue.main.async {
+            self.navigationItem.prompt = "Network error"
+            let delayInSeconds = 3.0
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds, execute: {
+                self.navigationItem.prompt = nil
+            })
+        }
     }
 }
 

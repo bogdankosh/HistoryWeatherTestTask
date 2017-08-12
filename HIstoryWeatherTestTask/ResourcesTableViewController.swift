@@ -55,7 +55,7 @@ class ResourcesTableViewController: UITableViewController {
         if let navigationController = presentingViewController as? UINavigationController {
             if let navController = navigationController.viewControllers[0] as? HWViewController {
                 navController.destination = Constants.destination.allCases[indexPath.row]
-                navController.title = "Loading..."
+//                navController.title = "Loading..."
             }
         }
         
