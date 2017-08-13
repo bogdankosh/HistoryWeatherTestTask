@@ -21,6 +21,7 @@
 		437B187C1F3606F300A30789 /* HWTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437B187B1F3606F300A30789 /* HWTableViewCell.swift */; };
 		43C334721F349E8E00EEA104 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C334711F349E8E00EEA104 /* Parser.swift */; };
 		43DE51271F379C29002AC71B /* ResourcesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE51261F379C29002AC71B /* ResourcesTableViewController.swift */; };
+		43FF0B2F1F405C6400334955 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF0B2E1F405C6400334955 /* Extensions.swift */; };
 		88DCC6FF009B80FEE4F7D71F /* Pods_HIstoryWeatherTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD08A80E04BBCE3BACD34E7 /* Pods_HIstoryWeatherTestTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		43C334711F349E8E00EEA104 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		43DE51181F3794BD002AC71B /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		43DE51261F379C29002AC71B /* ResourcesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTableViewController.swift; sourceTree = "<group>"; };
+		43FF0B2E1F405C6400334955 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7FE4990749586EE50B38FCA0 /* Pods-HIstoryWeatherTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HIstoryWeatherTestTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-HIstoryWeatherTestTask/Pods-HIstoryWeatherTestTask.release.xcconfig"; sourceTree = "<group>"; };
 		91723B9BD0F6008E64498369 /* Pods-HIstoryWeatherTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HIstoryWeatherTestTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HIstoryWeatherTestTask/Pods-HIstoryWeatherTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +148,7 @@
 				437B187B1F3606F300A30789 /* HWTableViewCell.swift */,
 				430200A91F38488600C0991A /* GraphLIstTableViewCell.swift */,
 				430B89DB1F39FDC400F5EE2B /* FrameTableViewCell.swift */,
+				43FF0B2E1F405C6400334955 /* Extensions.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				432564FD1F33B4A1000C1402 /* AppDelegate.swift in Sources */,
 				430200AA1F38488600C0991A /* GraphLIstTableViewCell.swift in Sources */,
 				430B89DA1F39EC0E00F5EE2B /* FrameViewController.swift in Sources */,
+				43FF0B2F1F405C6400334955 /* Extensions.swift in Sources */,
 				4305E2FE1F366AE6001E00C8 /* ChartViewController.swift in Sources */,
 				432486261F34E5EA004068F5 /* WeatherModel.swift in Sources */,
 				437B187A1F36063B00A30789 /* Constants.swift in Sources */,
