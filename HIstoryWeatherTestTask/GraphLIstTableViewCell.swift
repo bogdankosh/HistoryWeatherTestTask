@@ -13,4 +13,5 @@ class GraphLIstTableViewCell: UITableViewCell {
     @IBOutlet weak var graphName: UILabel!
     @IBOutlet weak var graphImage: UIImageView!
     @IBOutlet weak var dataPointsLabel: UILabel!
+    
 }

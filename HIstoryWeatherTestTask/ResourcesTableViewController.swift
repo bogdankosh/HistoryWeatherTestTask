@@ -13,38 +13,42 @@ class ResourcesTableViewController: UITableViewController {
     @IBAction func dismissVC(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
+    
+    // Storage for caching request's results (# of points), so we don't need to make request for every cell every time.
+    var tempStorage: [Constants.destination: String] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        title = "Locations"
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return Constants.destination.allCases.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = Constants.destination.allCases[indexPath.row].rawValue.capitalized
+        let destination = Constants.destination.allCases[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: ResourcesCell.identifier, for: indexPath)
+        
+        cell.textLabel?.text = destination.rawValue.capitalized
+        
+        if let string = tempStorage[destination] {
+            cell.detailTextLabel?.text = string
+        } else {
+            let parser = Parser()
+            let url = URL(string: destination.fullPath)!
+            parser.load(url: url) { int in
+                let tempString = String(int) + " points"
+                self.tempStorage[destination] = tempString
+                DispatchQueue.main.async {
+                    cell.detailTextLabel?.fadeTransition(0.6)
+                    cell.detailTextLabel?.text = tempString
+                }
+            }
+        }
 
         return cell
     }
@@ -55,11 +59,8 @@ class ResourcesTableViewController: UITableViewController {
         if let navigationController = presentingViewController as? UINavigationController {
             if let navController = navigationController.viewControllers[0] as? HWViewController {
                 navController.destination = Constants.destination.allCases[indexPath.row]
-//                navController.title = "Loading..."
             }
         }
-        
-        
         dismiss(animated: true, completion: nil)
     }
  

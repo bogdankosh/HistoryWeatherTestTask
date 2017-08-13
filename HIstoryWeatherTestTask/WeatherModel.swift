@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WeatherModel {
+struct WeatherModel {
     
     let year: Int
     let month: Int

@@ -79,15 +79,19 @@ extension HWViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: GraphLIstTableViewCell.identifier, for: indexPath) as! GraphLIstTableViewCell
             cell.graphName.text =                   availableGraphViews[indexPath.row][0]
             cell.graphImage.image = UIImage(named:  availableGraphViews[indexPath.row][1])
+            cell.dataPointsLabel.fadeTransition(0.5)
             cell.dataPointsLabel.text = String(store.count)
             return cell
             
             
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: FrameTableViewCell.identifier, for: indexPath) as! FrameTableViewCell
-            return cell
+//        case 1:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: FrameTableViewCell.identifier, for: indexPath) as! FrameTableViewCell
+//            return cell
         default:
-            return UITableViewCell()
+            let cell = UITableViewCell()
+            cell.selectionStyle = .none
+            return cell
+            
         }
     }
     

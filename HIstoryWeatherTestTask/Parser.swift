@@ -12,6 +12,8 @@ class Parser {
     
     var delegate: ParserDelegate?
     
+    
+    
     func load(url: URL) {
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig)
@@ -29,6 +31,39 @@ class Parser {
             }
         }
         task.resume()
+    }
+    
+    func load(url: URL, completion: @escaping (_ number: Int) -> Void) {
+        let sessionConfig = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfig)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        let task = session.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print("Error")
+            }
+            
+            if let data = data {
+                guard let stringFromData = String(data: data, encoding: .utf8) else {
+                    return
+                }
+                let stringArray = stringFromData.components(separatedBy: .newlines)
+                
+                var arrayStrOfStr = [[String]]()
+                
+                for string in stringArray {
+                    let stringArrayLine = string.components(separatedBy: .whitespaces)
+                    let filtered = stringArrayLine.filter({!$0.isEmpty})
+                    
+                    if !filtered.isEmpty {
+                        arrayStrOfStr.append(filtered)
+                    }
+                }
+                completion(arrayStrOfStr.count)
+            }
+        }
+        task.resume()
+
     }
 
     
