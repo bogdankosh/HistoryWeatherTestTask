@@ -55,7 +55,7 @@ class HWViewController: UIViewController {
     func doRequest() {
         navigationItem.prompt = "Loading..."
         let url = URL(string: destination.fullPath)!
-        dataSource.load(url: url)
+        dataSource.parseData(from: url)
     }
     
     

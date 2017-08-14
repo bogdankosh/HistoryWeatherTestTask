@@ -63,7 +63,6 @@ class ResourcesTableViewController: UITableViewController {
         }
         dismiss(animated: true, completion: nil)
     }
- 
 
     /*
     // Override to support conditional editing of the table view.
