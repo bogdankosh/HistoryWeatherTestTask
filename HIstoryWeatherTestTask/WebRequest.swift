@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WebRequest {
+struct WebService {
     
     let session: URLSession
     

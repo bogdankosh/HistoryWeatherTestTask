@@ -48,11 +48,19 @@ struct Constants {
         case yeovilton
         
         var description: String {
-            return self.rawValue
+            switch self {
+            case .ballypatrick:     return "Ballypatrick Forest"
+            case .cardiff:          return "Cardiff Bute Park"
+            case .newtonrigg:       return "Newton Rigg"
+            case .rossonwye:        return "Ross-on-Wye"
+            case .suttonbonington:  return "Sutton Bonington"
+            case .wickairport:      return "Wick Airport"
+            default:                return self.rawValue
+            }
         }
         
         var fullPath: String {
-            return Constants.baseURL + self.description + Constants.endURL
+            return Constants.baseURL + self.rawValue + Constants.endURL
         }
         
         static let allCases = [
@@ -90,4 +98,7 @@ struct Constants {
             yeovilton
         ]
     }
+    
+    // Number of header lines
+    static let headerLines = 8
 }

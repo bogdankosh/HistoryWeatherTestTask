@@ -33,7 +33,7 @@ class ResourcesTableViewController: UITableViewController {
         let destination = Constants.destination.allCases[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: ResourcesCell.identifier, for: indexPath)
         
-        cell.textLabel?.text = destination.rawValue.capitalized
+        cell.textLabel?.text = destination.description.capitalized
         
         if let string = tempStorage[destination] {
             cell.detailTextLabel?.text = string
@@ -41,7 +41,8 @@ class ResourcesTableViewController: UITableViewController {
             let parser = Parser()
             let url = URL(string: destination.fullPath)!
             parser.load(url: url) { int in
-                let tempString = String(int) + " points"
+                let effectivePoints = int - Constants.headerLines
+                let tempString = String(effectivePoints) + " points"
                 self.tempStorage[destination] = tempString
                 DispatchQueue.main.async {
                     cell.detailTextLabel?.fadeTransition(0.6)

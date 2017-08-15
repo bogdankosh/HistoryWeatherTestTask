@@ -12,11 +12,11 @@ class Parser {
     
     var delegate: ParserDelegate?
     
-    let webService: WebRequest
+    let webService: WebService
 
     
     init() {
-        webService = WebRequest()
+        webService = WebService()
     }
     
     func load(url: URL, completion: @escaping (_ number: Int) -> Void) {
@@ -42,9 +42,6 @@ class Parser {
                 completion(arrayStrOfStr.count)
             }
         }
-        
-        
-        
     }
     
     func parseData(from url: URL) {
@@ -75,8 +72,8 @@ class Parser {
             for (arrayIndex, array) in arrayStrOfStr.enumerated() {
                 // initialize WeatherModel from line and add it to array.
                 
-                // Skip first 8 header lines
-                if arrayIndex < 8 { continue }
+                // Skip first some amounts of header lines
+                if arrayIndex < Constants.headerLines { continue }
                 
                 // Values for initialization
                 var yearToInit = Int()
