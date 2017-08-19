@@ -14,8 +14,7 @@ class ChartViewController: UIViewController {
 
     @IBOutlet var chartView: LineChartView!
     
-    var numbers: [Double] = [2.2, 3.0, 3.4, 3.5, 3.2]
-    var numbers2: [Double] = []
+    var numbers: [Double] = []
     
     var xaxis: [String] = []
     var yaxis: [Double] = []
