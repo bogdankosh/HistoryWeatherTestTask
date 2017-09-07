@@ -89,7 +89,6 @@ class ChartViewController: UIViewController {
             }
         }
         
-        ()
         let yearStoreSorted = yearStoreFiltered.sorted(by: { $0.0 < $1.0 } )
         var xaxis = [String]()
         var yaxis = [Double]()
@@ -110,4 +109,8 @@ class ChartViewController: UIViewController {
     
 
 
+}
+
+protocol ChartsMap {
+    
 }

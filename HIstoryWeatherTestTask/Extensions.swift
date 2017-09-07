@@ -34,9 +34,9 @@ extension UIView {
 }
 
 extension UIViewController {
-    func presentAlert(message: String, title: String = "") {
+    func presentAlert(title: String = "", message: String, dismissButton: String = "OK") {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let OKAction = UIAlertAction(title: dismissButton, style: .default, handler: nil)
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion: nil)
     }

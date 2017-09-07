@@ -40,6 +40,8 @@ class HWViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
+
         dataSource.delegate = self
         doRequest()
         
@@ -62,13 +64,12 @@ class HWViewController: UIViewController {
         if let destinationVC = segue.destination as? ChartViewController {
             destinationVC.store = store
         }
-        
     }
 }
 
 
 
-// MARK: - Data Source methods
+// MARK: - UITableViewDataSource methods
 
 extension HWViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,6 +99,23 @@ extension HWViewController: UITableViewDataSource {
         return 2        // availableGraphViews.count
     }
 }
+
+// MARK: - UITableViewDelegate methods
+
+extension HWViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if store.isEmpty {
+            presentAlert(title: "No data", message: "There was a problem obtaining data points. Please, check your connection.", dismissButton: "Got it")
+            return nil
+        } else {
+            return indexPath
+        }
+    }
+    
+}
+
+// MARK: -
 
 extension HWViewController: ParserDelegate {
     func didReceiveDataUpdates(store: [WeatherModel]) {
