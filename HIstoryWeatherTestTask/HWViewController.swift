@@ -24,7 +24,7 @@ class HWViewController: UIViewController {
         }
     }
     
-    let availableGraphViews = [
+    let availableGraphViews: [[String]] = [
         ["Line Graph", "lineGraph"]
     ]
     
@@ -74,11 +74,12 @@ class HWViewController: UIViewController {
 extension HWViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: GraphLIstTableViewCell.identifier, for: indexPath) as! GraphLIstTableViewCell
-            cell.graphName.text =                   availableGraphViews[indexPath.row][0]
-            cell.graphImage.image = UIImage(named:  availableGraphViews[indexPath.row][1])
+            cell.graphName.text = availableGraphViews[indexPath.row][0]
+            cell.graphImage.image = UIImage(named: availableGraphViews[indexPath.row][1])
+
             cell.dataPointsLabel.fadeTransition(0.5)
             cell.dataPointsLabel.text = String(store.count)
             return cell
@@ -96,7 +97,7 @@ extension HWViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2        // availableGraphViews.count
+        return 1        // availableGraphViews.count
     }
 }
 
@@ -112,7 +113,6 @@ extension HWViewController: UITableViewDelegate {
             return indexPath
         }
     }
-    
 }
 
 // MARK: -
