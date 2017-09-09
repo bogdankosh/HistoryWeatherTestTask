@@ -280,11 +280,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lineGraph" translatesAutoresizingMaskIntoConstraints="NO" id="iBq-t2-FXh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lineGraph" translatesAutoresizingMaskIntoConstraints="NO" id="iBq-t2-FXh">
                                 <rect key="frame" x="126" y="72" width="122" height="123"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="iBq-t2-FXh" secondAttribute="height" multiplier="122:123" id="pWw-C3-lcD"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kve-Yv-0eO">
                                 <rect key="frame" x="14" y="203" width="160" height="31"/>
@@ -292,10 +290,6 @@
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="iBq-t2-FXh" firstAttribute="centerX" secondItem="5zv-LI-7oP" secondAttribute="centerX" id="7lY-85-7w4"/>
-                            <constraint firstItem="iBq-t2-FXh" firstAttribute="top" secondItem="qT2-oa-5hV" secondAttribute="bottom" constant="8" symbolic="YES" id="ifh-TU-McY"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="myView" destination="iBq-t2-FXh" id="Wd8-01-DHk"/>

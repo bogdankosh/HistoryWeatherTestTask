@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Charts
 
 class HWViewController: UIViewController {
     
@@ -50,7 +49,6 @@ class HWViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         doRequest()
-        
     }
     
     func doRequest() {
@@ -66,8 +64,6 @@ class HWViewController: UIViewController {
         }
     }
 }
-
-
 
 // MARK: - UITableViewDataSource methods
 
@@ -85,9 +81,9 @@ extension HWViewController: UITableViewDataSource {
             return cell
             
             
-//        case 1:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: FrameTableViewCell.identifier, for: indexPath) as! FrameTableViewCell
-//            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: FrameTableViewCell.identifier, for: indexPath) as! FrameTableViewCell
+            return cell
         default:
             let cell = UITableViewCell()
             cell.selectionStyle = .none
@@ -97,7 +93,18 @@ extension HWViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1        // availableGraphViews.count
+        switch section {
+        case 0:
+            return availableGraphViews.count
+        case 1:
+            return 1
+        default:
+            return 0
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
 }
 
@@ -106,7 +113,7 @@ extension HWViewController: UITableViewDataSource {
 extension HWViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if store.isEmpty {
+        if store.isEmpty && indexPath.section == 0 {
             presentAlert(title: "No data", message: "There was a problem obtaining data points. Please, check your connection.", dismissButton: "Got it")
             return nil
         } else {
