@@ -32,6 +32,7 @@ class HWViewController: UIViewController {
     var destination: Constants.destination = .bradford {
         didSet {
             print("destination is now \(destination.description)")
+            UserDefaultsStore.save(destination.rawValue, by: Constants.destinationKey)
         }
     }
 
@@ -44,6 +45,9 @@ class HWViewController: UIViewController {
         dataSource.delegate = self
         doRequest()
         
+        if let value = UserDefaultsStore.load(by: Constants.destinationKey) {
+            destination = Constants.destination(rawValue: value)!
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

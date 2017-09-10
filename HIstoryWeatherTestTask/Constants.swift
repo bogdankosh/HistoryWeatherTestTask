@@ -101,4 +101,6 @@ struct Constants {
     
     // Number of header lines
     static let headerLines = 8
+    
+    static let destinationKey = "destinationKey"
 }
