@@ -101,7 +101,7 @@ extension HWViewController: UITableViewDataSource {
         case 0:
             return availableGraphViews.count
         case 1:
-            return 1
+            return 0 // Disabled frame screen for now (not ready yet)
         default:
             return 0
         }
